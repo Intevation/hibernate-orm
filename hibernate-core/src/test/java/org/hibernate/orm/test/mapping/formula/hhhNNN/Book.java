@@ -47,9 +47,8 @@ class Book {
 	}
 
 	@Formula("""
-			(SELECT count(DISTINCT sid)
-			FROM (SELECT id as sid book)
-			)
+			SELECT COUNT(DISTINCT sid)
+			FROM (SELECT id as sid FROM book)
 			""")
 	private Integer booksCounter;
 
